@@ -1,5 +1,6 @@
 package com.excitness.taskapp.ui.home;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -17,6 +18,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private final List<TaskModel> list = new ArrayList<>();
 
+    @SuppressLint("NotifyDataSetChanged")
     public void addList(TaskModel lists){
         this.list.add(lists);
         notifyDataSetChanged();
@@ -45,7 +47,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         public ViewHolder(@NonNull ItemRvBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-
+    //пишу код и люблю тебя
 
         }
 

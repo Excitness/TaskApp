@@ -1,6 +1,7 @@
 package com.excitness.taskapp.Model;
 
 public class TaskModel {
+
     private final String title;
     private final String created;
 
@@ -12,7 +13,6 @@ public class TaskModel {
     public String getTitle() {
         return title;
     }
-
     public String getCreated() {
         return created;
     }

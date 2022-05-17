@@ -1,29 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:layout_centerInParent="true" />
-
     <ImageView
-        android:id="@+id/image_profile"
+        android:id="@+id/img_profile"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="20dp"
-        android:background="@drawable/ic_add1"
+        android:layout_height="250dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/ic_add"
+        android:scaleType="centerCrop" />
 
-        />
+    <LinearLayout
+        android:layout_below="@id/img_profile"
+        android:id="@+id/linear_case"
+        android:weightSum="2"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:textSize="20sp"
+            android:background="@color/purple_200"
+            android:text="Name"
+            android:paddingVertical="5dp"
+            android:textColor="@color/black"
+            android:id="@+id/txt_name"
+            android:layout_width="180dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:paddingStart="10dp"
+            android:background="@color/purple_200"
+            android:paddingEnd="0dp"
+            android:paddingVertical="5dp"
+            android:text="Surname"
+            android:textColor="@color/black"
+            android:id="@+id/txt_last_name"
+            android:layout_width="180dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_case"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/teal_200"
+            android:hint="Write your name"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <EditText
+            android:id="@+id/edt_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/edt_name"
+            android:background="@color/teal_200"
+            android:hint="Write your surname"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+
+        <Button
+            android:id="@+id/btn_txt_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edt_last_name"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="save"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

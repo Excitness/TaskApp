@@ -28,7 +28,7 @@ public class DetailFragment extends Fragment {
 
     String date = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss", Locale.getDefault()).format(new Date());
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentDetailBinding.inflate(inflater);
         return binding.getRoot();
@@ -49,7 +49,7 @@ public class DetailFragment extends Fragment {
 
     private void closeFragment() {
         NavController navController = Navigation.findNavController(requireActivity(),
-                R.id.main_container);
+                R.id.nav_host_fragment_activity_main);
         navController.navigateUp();
     }
 

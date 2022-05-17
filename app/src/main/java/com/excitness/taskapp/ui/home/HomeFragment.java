@@ -4,20 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.excitness.taskapp.Model.TaskModel;
 import com.excitness.taskapp.R;
 import com.excitness.taskapp.databinding.FragmentHomeBinding;
 import com.excitness.taskapp.ui.detail.DetailFragment;
-
-
 
 public class HomeFragment extends Fragment {
 
@@ -68,11 +63,10 @@ public class HomeFragment extends Fragment {
     private void initNavController() {
         NavHostFragment navHostController = (NavHostFragment)
                 requireActivity().getSupportFragmentManager()
-                .findFragmentById(R.id.main_container);
+                .findFragmentById(R.id.nav_host_fragment_activity_main);
         assert navHostController != null;
         controller = navHostController.getNavController();
     }
-
 
     private void initListeners(){
         binding.addTaskBtn.setOnClickListener(v -> controller.navigate(R.id.detailFragment));
