@@ -18,9 +18,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private final List<TaskModel> list = new ArrayList<>();
 
-    @SuppressLint("NotifyDataSetChanged")
-    public void addList(TaskModel lists){
-        this.list.add(lists);
+    //@SuppressLint("NotifyDataSetChanged")
+    //public void addList(TaskModel model){
+      //  this.list.add(model);
+        //notifyDataSetChanged();
+    //}
+
+    public void addList(List<TaskModel>list){
+        this.list.addAll(list);
         notifyDataSetChanged();
     }
 
@@ -47,7 +52,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         public ViewHolder(@NonNull ItemRvBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
-    //пишу код и люблю тебя
 
         }
 

@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+
+import com.excitness.taskapp.App;
 import com.excitness.taskapp.Model.TaskModel;
 import com.excitness.taskapp.R;
 import com.excitness.taskapp.databinding.FragmentHomeBinding;
@@ -33,16 +35,11 @@ public class HomeFragment extends Fragment {
         initRecycler();
         initNavController();
         initListeners();
-        initAdapter();
-    }
-
-    private void initAdapter() {
-        binding.taskRv.setAdapter(adapter);
     }
 
     private void initRecycler() {
         TaskAdapter taskAdapter = new TaskAdapter();
-
+        adapter.addList(App.dataBase.taskDao().getAllTasks());
         binding.taskRv.setAdapter(taskAdapter);
     }
 
@@ -54,7 +51,7 @@ public class HomeFragment extends Fragment {
                         ((requestKey, result) -> {
                             String text = result.getString(DetailFragment.HOME_KEY);
                             String date = result.getString(DetailFragment.HOME_KEYS);
-                            adapter.addList(new TaskModel(text, date));
+                            App.dataBase.taskDao().addTask(new TaskModel(text, date));
                         })
                 );
 
