@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.excitness.taskapp.Model.TaskModel;
+import com.excitness.taskapp.R;
 import com.excitness.taskapp.databinding.ItemRvBinding;
 
 import java.util.ArrayList;
@@ -35,13 +36,27 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         return list.get(pos);
     }
 
+    public void addItem(TaskModel taskModel){
+        this.list.add(taskModel);
+        notifyItemInserted(list.size()-1);
+    }
+
     public void delete(int pos){
         list.remove(pos);
         notifyItemRemoved(pos);
     }
+    public void delete(TaskModel model){
+        list.remove(model);
+        notifyDataSetChanged();
+    }
 
-    public void addList(List<TaskModel>list){
+    public void setList(List<TaskModel>list){
         this.list.clear();
+        this.list.addAll(list);
+        notifyDataSetChanged();
+    }
+
+    public void addList(List<TaskModel> list){
         this.list.addAll(list);
         notifyDataSetChanged();
     }

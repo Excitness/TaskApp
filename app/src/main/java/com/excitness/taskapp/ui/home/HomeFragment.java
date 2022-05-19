@@ -52,10 +52,10 @@ public class HomeFragment extends Fragment implements TaskAdapter.ItemClick {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.menu_sort_alph:
-                adapter.addList(App.dataBase.taskDao().getAllTasksAlph());
+                adapter.setList(App.dataBase.taskDao().getAllTasksAlph());
                 return true;
             case R.id.menu_sort_date:
-                adapter.addList(App.dataBase.taskDao().getAllTasksDate());
+                adapter.setList(App.dataBase.taskDao().getAllTasksDate());
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -64,14 +64,14 @@ public class HomeFragment extends Fragment implements TaskAdapter.ItemClick {
 
     private void initRecycler() {
         adapter = new TaskAdapter(this);
-        adapter.addList(App.dataBase.taskDao().getAllTasks());
+        adapter.setList(App.dataBase.taskDao().getAllTasks());
         binding.taskRv.setAdapter(adapter);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        adapter.addList(App.dataBase.taskDao().getAllTasks());
+        adapter.setList(App.dataBase.taskDao().getAllTasks());
     }
 
     private void initResultListener() {
