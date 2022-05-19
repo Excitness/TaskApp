@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
             openBoard();
             App.prefs.isShowed();
         }
-    }
 
+    }
     private void BottomNav() {
         controller.addOnDestinationChangedListener((navController, navDestination, bundle) -> {
             if (navDestination.getId() == R.id.boardFragment || navDestination.getId() ==

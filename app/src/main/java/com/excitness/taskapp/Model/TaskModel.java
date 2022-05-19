@@ -3,8 +3,10 @@ package com.excitness.taskapp.Model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity
-public class TaskModel {
+public class TaskModel implements Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
